@@ -20,16 +20,16 @@ export const mantineConfig: Partial<MantineThemeOverride> = {
   colorScheme: "light",
   colors: {
     primary: [
-      "#CEFFEF",
-      "#71B7A0",
-      "#55B898",
-      "#3CB990",
-      "#28B788",
-      "#14B681",
-      "#00B87C",
-      "#11956A",
-      "#1B7A5B",
-      "#21654F"
+      "#5F7689",
+      "#516C82",
+      "#45637B",
+      "#385A76",
+      "#2C5372",
+      "#204C70",
+      "#14466F",
+      "#1A3E5C",
+      "#1D374D",
+      "#1F3141"
     ],
     secondary: [
       "#FBBB6A", //primary 1

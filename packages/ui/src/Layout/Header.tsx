@@ -3,6 +3,7 @@ import {
   Burger,
   Button,
   Center,
+  Container,
   createStyles,
   Divider,
   Drawer,
@@ -150,35 +151,36 @@ export const Header: React.FC<HeaderProps> = props => {
 
   return (
     <Box>
-      <MantineHeader height={80} px="md">
-        <Group position="apart" sx={{ height: "100%" }}>
-          <Link to="/" className={classes.innerLink}>
-            <BrandAvatar />
-          </Link>
+      <MantineHeader height={80} py={15}>
+        <Container size={1240}>
+          <Group position="apart" sx={{ height: "100%" }}>
+            <Group sx={{ height: "100%" }} className={classes.hiddenMobile}>
+              <Link to="/" className={classes.innerLink}>
+                <BrandAvatar />
+              </Link>
+              {items}
+            </Group>
 
-          <Group sx={{ height: "100%" }} className={classes.hiddenMobile}>
-            {items}
+            <Group className={classes.hiddenMobile}>
+              <Link to="/login">
+                <Button size="lg" variant="outline">
+                  Contact support
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button size="lg" variant="filled">
+                  Create a new workspace
+                </Button>
+              </Link>
+            </Group>
+
+            <Burger
+              opened={drawerOpened}
+              onClick={toggleDrawer}
+              className={classes.hiddenDesktop}
+            />
           </Group>
-
-          <Group className={classes.hiddenMobile}>
-            <Link to="/login">
-              <Button size="lg" variant="subtle">
-                Log in
-              </Button>
-            </Link>
-            <Link to="/signup">
-              <Button size="lg" variant="filled">
-                Sign up
-              </Button>
-            </Link>
-          </Group>
-
-          <Burger
-            opened={drawerOpened}
-            onClick={toggleDrawer}
-            className={classes.hiddenDesktop}
-          />
-        </Group>
+        </Container>
       </MantineHeader>
 
       <Drawer
